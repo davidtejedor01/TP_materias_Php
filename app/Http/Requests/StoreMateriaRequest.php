@@ -22,10 +22,10 @@ class StoreMateriaRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'numero' => 'required|integer',
+            'numero' => 'required|integer|min:1',
             'nombre' => 'required|string|min:1',
-            'anio' => 'required|integer|max:50',
-            'division' => 'required|integer|max:50',
+            'anio' => 'required|integer|min:1|max:50',
+            'division' => 'required|integer|min:1|max:50',
         ];
 
         if ($this->isMethod('POST')) // solo en create

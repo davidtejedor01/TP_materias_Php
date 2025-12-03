@@ -47,9 +47,6 @@ class MateriaController extends Controller
         return redirect()->route('materias.index');
     }
 
-
-
-
     /*Formulario para editar una Materia existente.*/
     public function edit(Materia $materia)
     {
