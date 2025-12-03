@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\KartingController;
+use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +16,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Protección del CRUD para que solo usuarios autenticados puedan acceder
 Route::middleware('auth')->group(function () {
-    Route::resource('kartings', KartingController::class);
+    Route::resource('materias', MateriaController::class);
 });
 
 

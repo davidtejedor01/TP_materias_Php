@@ -13,7 +13,7 @@ class AuthController extends Controller
     {
         // Si ya está logueado, mandalo al CRUD directamente
         if (Auth::check()) {
-            return redirect()->route('kartings.index');
+            return redirect()->route('materias.index');
         }
 
         return view('welcome');
@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) { // intento de autenticación
             $request->session()->regenerate();  // Regeneración de la sesión para evitar fijación de sesión
-            return redirect()->route('kartings.index'); // redirección al CRUD
+            return redirect()->route('materias.index'); // redirección al CRUD
         }
 
         return back()->withErrors(['email' => 'Credenciales incorrectas.',])->onlyInput('email'); // Si falla, muestra el error

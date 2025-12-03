@@ -33,6 +33,6 @@ class RegisterController extends Controller
         // Loguear automáticamente
         Auth::login($user);
 
-        return redirect()->route('kartings.index'); // Redirige al CRUD
+        return redirect()->route('materias.index'); // Redirige al CRUD
     }
 }
